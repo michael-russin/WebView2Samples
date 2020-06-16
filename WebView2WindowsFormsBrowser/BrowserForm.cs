@@ -10,10 +10,19 @@ namespace WebView2WindowsFormsBrowser
 {
     public partial class BrowserForm : Form
     {
+        private CoreWebView2NewWindowRequestedEventArgs _newWindowRequestedEventArgs;
+        private CoreWebView2Deferral _newWindowDeferral;
+
         public BrowserForm()
         {
             InitializeComponent();
             HandleResize();
+        }
+
+        public BrowserForm(CoreWebView2NewWindowRequestedEventArgs args, CoreWebView2Deferral deferral) :this()
+        {
+            _newWindowRequestedEventArgs = args;
+            _newWindowDeferral = deferral;
         }
 
         private void UpdateTitleWithEvent(string message)
@@ -44,7 +53,24 @@ namespace WebView2WindowsFormsBrowser
             this.webView2Control.CoreWebView2.HistoryChanged += CoreWebView2_HistoryChanged;
             this.webView2Control.CoreWebView2.DocumentTitleChanged += CoreWebView2_DocumentTitleChanged;
             this.webView2Control.CoreWebView2.AddWebResourceRequestedFilter("*", CoreWebView2WebResourceContext.Image);
+            this.webView2Control.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
             UpdateTitleWithEvent("CoreWebView2Ready");
+
+            if (_newWindowRequestedEventArgs != null)
+            {
+                _newWindowRequestedEventArgs.NewWindow = webView2Control.CoreWebView2;
+                _newWindowRequestedEventArgs.Handled = true;
+                _newWindowDeferral.Complete();
+                _newWindowRequestedEventArgs = null;
+                _newWindowDeferral = null;
+            }
+        }
+
+        private void CoreWebView2_NewWindowRequested(object sender, CoreWebView2NewWindowRequestedEventArgs e)
+        {
+            CoreWebView2Deferral deferral = e.GetDeferral();
+            BrowserForm newWindow = new BrowserForm(e, deferral);
+            newWindow.Show();
         }
 
         private void WebView2Control_KeyUp(object sender, KeyEventArgs e)
