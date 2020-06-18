@@ -50,15 +50,14 @@ namespace WebView2WindowsFormsBrowser
             this.xToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.xToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            this.webView2Control = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.SuspendLayout();
             // 
             // btnEvents
             // 
-            this.btnEvents.Location = new System.Drawing.Point(1576, 48);
-            this.btnEvents.Margin = new System.Windows.Forms.Padding(6);
+            this.btnEvents.Location = new System.Drawing.Point(1051, 31);
+            this.btnEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEvents.Name = "btnEvents";
-            this.btnEvents.Size = new System.Drawing.Size(150, 44);
+            this.btnEvents.Size = new System.Drawing.Size(100, 28);
             this.btnEvents.TabIndex = 6;
             this.btnEvents.Text = "Events";
             this.btnEvents.UseVisualStyleBackColor = true;
@@ -67,10 +66,10 @@ namespace WebView2WindowsFormsBrowser
             // btnBack
             // 
             this.btnBack.Enabled = false;
-            this.btnBack.Location = new System.Drawing.Point(24, 48);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(6);
+            this.btnBack.Location = new System.Drawing.Point(16, 31);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(150, 44);
+            this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -79,10 +78,10 @@ namespace WebView2WindowsFormsBrowser
             // btnForward
             // 
             this.btnForward.Enabled = false;
-            this.btnForward.Location = new System.Drawing.Point(186, 48);
-            this.btnForward.Margin = new System.Windows.Forms.Padding(6);
+            this.btnForward.Location = new System.Drawing.Point(124, 31);
+            this.btnForward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(150, 44);
+            this.btnForward.Size = new System.Drawing.Size(100, 28);
             this.btnForward.TabIndex = 1;
             this.btnForward.Text = "Forward";
             this.btnForward.UseVisualStyleBackColor = true;
@@ -90,10 +89,10 @@ namespace WebView2WindowsFormsBrowser
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(348, 48);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(6);
+            this.btnRefresh.Location = new System.Drawing.Point(232, 31);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(150, 44);
+            this.btnRefresh.Size = new System.Drawing.Size(100, 28);
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -101,20 +100,20 @@ namespace WebView2WindowsFormsBrowser
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(510, 48);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(6);
+            this.btnStop.Location = new System.Drawing.Point(340, 31);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(150, 44);
+            this.btnStop.Size = new System.Drawing.Size(100, 28);
             this.btnStop.TabIndex = 3;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(1426, 48);
-            this.btnGo.Margin = new System.Windows.Forms.Padding(6);
+            this.btnGo.Location = new System.Drawing.Point(951, 31);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(150, 44);
+            this.btnGo.Size = new System.Drawing.Size(100, 28);
             this.btnGo.TabIndex = 5;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -122,10 +121,10 @@ namespace WebView2WindowsFormsBrowser
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(672, 48);
-            this.txtUrl.Margin = new System.Windows.Forms.Padding(6);
+            this.txtUrl.Location = new System.Drawing.Point(448, 31);
+            this.txtUrl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(738, 31);
+            this.txtUrl.Size = new System.Drawing.Size(493, 22);
             this.txtUrl.TabIndex = 4;
             this.txtUrl.Text = "https://www.bing.com/";
             // 
@@ -137,14 +136,15 @@ namespace WebView2WindowsFormsBrowser
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1580, 42);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1053, 26);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 38);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // viewToolStripMenuItem
@@ -152,7 +152,7 @@ namespace WebView2WindowsFormsBrowser
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zoomToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(86, 38);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // zoomToolStripMenuItem
@@ -163,58 +163,42 @@ namespace WebView2WindowsFormsBrowser
             this.xToolStripMenuItem2,
             this.xToolStripMenuItem3});
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
             this.zoomToolStripMenuItem.Text = "Zoom";
             // 
             // xToolStripMenuItem
             // 
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.xToolStripMenuItem.Text = "0.5x";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem05_Click);
             // 
             // xToolStripMenuItem1
             // 
             this.xToolStripMenuItem1.Name = "xToolStripMenuItem1";
-            this.xToolStripMenuItem1.Size = new System.Drawing.Size(359, 44);
+            this.xToolStripMenuItem1.Size = new System.Drawing.Size(199, 26);
             this.xToolStripMenuItem1.Text = "1.0x";
             this.xToolStripMenuItem1.Click += new System.EventHandler(this.xToolStripMenuItem1_Click);
             // 
             // xToolStripMenuItem2
             // 
             this.xToolStripMenuItem2.Name = "xToolStripMenuItem2";
-            this.xToolStripMenuItem2.Size = new System.Drawing.Size(359, 44);
+            this.xToolStripMenuItem2.Size = new System.Drawing.Size(199, 26);
             this.xToolStripMenuItem2.Text = "2.0x";
             this.xToolStripMenuItem2.Click += new System.EventHandler(this.xToolStripMenuItem2_Click);
             // 
             // xToolStripMenuItem3
             // 
             this.xToolStripMenuItem3.Name = "xToolStripMenuItem3";
-            this.xToolStripMenuItem3.Size = new System.Drawing.Size(359, 44);
+            this.xToolStripMenuItem3.Size = new System.Drawing.Size(199, 26);
             this.xToolStripMenuItem3.Text = "Get ZoomFactor";
             this.xToolStripMenuItem3.Click += new System.EventHandler(this.xToolStripMenuItem3_Click);
             // 
-            // webView2Control
-            // 
-            this.webView2Control.Location = new System.Drawing.Point(0, 96);
-            this.webView2Control.Name = "webView2Control";
-            this.webView2Control.Size = new System.Drawing.Size(788, 410);
-            this.webView2Control.Source = new Uri("https://www.bing.com/");
-            this.webView2Control.TabIndex = 7;
-            this.webView2Control.Text = "webView2Control";
-            this.webView2Control.CoreWebView2Ready += WebView2Control_CoreWebView2Ready;
-            this.webView2Control.NavigationStarting += WebView2Control_NavigationStarting;
-            this.webView2Control.NavigationCompleted += WebView2Control_NavigationCompleted;
-            this.webView2Control.SourceChanged += WebView2Control_SourceChanged;
-            this.webView2Control.KeyDown += WebView2Control_KeyDown;
-            this.webView2Control.KeyUp += WebView2Control_KeyUp;
-            // 
             // BrowserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1580, 865);
-            this.Controls.Add(this.webView2Control);
+            this.ClientSize = new System.Drawing.Size(1053, 554);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.btnStop);
@@ -224,7 +208,7 @@ namespace WebView2WindowsFormsBrowser
             this.Controls.Add(this.btnEvents);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BrowserForm";
             this.Text = "BrowserForm";
             this.Resize += new System.EventHandler(this.Form_Resize);
@@ -232,6 +216,7 @@ namespace WebView2WindowsFormsBrowser
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
@@ -242,7 +227,6 @@ namespace WebView2WindowsFormsBrowser
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.TextBox txtUrl;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView2Control;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
