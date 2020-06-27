@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.WinForms;
+using Newtonsoft.Json.Linq;
 
 namespace WebView2WindowsFormsBrowser
 {
@@ -30,8 +31,11 @@ namespace WebView2WindowsFormsBrowser
             string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string cacheFolder = Path.Combine(localAppData, "WindowsFormsWebView2");
 
+            //            CoreWebView2EnvironmentOptions options = new CoreWebView2EnvironmentOptions("--disk-cache-size=1 ");
+            CoreWebView2EnvironmentOptions options = new CoreWebView2EnvironmentOptions("–incognito ");
+
             // Create the environment manually
-            Task<CoreWebView2Environment> task = CoreWebView2Environment.CreateAsync(null, cacheFolder, null);
+            Task<CoreWebView2Environment> task = CoreWebView2Environment.CreateAsync(null, cacheFolder, options);
 
             // Do this so the task is continued on the UI Thread
             TaskScheduler ui = TaskScheduler.FromCurrentSynchronizationContext();
@@ -219,6 +223,28 @@ namespace WebView2WindowsFormsBrowser
 
             // Resize the URL textbox
             txtUrl.Width = btnGo.Left - txtUrl.Left;
+        }
+
+        private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewSource();
+        }
+
+        private async void ViewSource()
+        {
+            string json = await _webView2Control.CoreWebView2.CallDevToolsProtocolMethodAsync("DOM.getDocument", "{}");
+
+            JObject o = JObject.Parse(json);
+            JToken nodeId = o["root"]["nodeId"];
+
+            string r2 = await _webView2Control.CoreWebView2.CallDevToolsProtocolMethodAsync("DOM.getOuterHTML", "{\"nodeId\" : " + (long)nodeId + "}");
+
+            JObject o2 = JObject.Parse(r2);
+            JToken outerHTML = o2["outerHTML"];
+
+            string html = outerHTML.ToString();
+            ViewSourceForm form = new ViewSourceForm(html);
+            form.ShowDialog();
         }
     }
 }

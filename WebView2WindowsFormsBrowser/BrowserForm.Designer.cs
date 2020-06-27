@@ -49,13 +49,14 @@ namespace WebView2WindowsFormsBrowser
             this.xToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.xToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEvents
             // 
             this.btnEvents.Location = new System.Drawing.Point(1051, 31);
-            this.btnEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEvents.Margin = new System.Windows.Forms.Padding(4);
             this.btnEvents.Name = "btnEvents";
             this.btnEvents.Size = new System.Drawing.Size(100, 28);
             this.btnEvents.TabIndex = 6;
@@ -67,7 +68,7 @@ namespace WebView2WindowsFormsBrowser
             // 
             this.btnBack.Enabled = false;
             this.btnBack.Location = new System.Drawing.Point(16, 31);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 0;
@@ -79,7 +80,7 @@ namespace WebView2WindowsFormsBrowser
             // 
             this.btnForward.Enabled = false;
             this.btnForward.Location = new System.Drawing.Point(124, 31);
-            this.btnForward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnForward.Margin = new System.Windows.Forms.Padding(4);
             this.btnForward.Name = "btnForward";
             this.btnForward.Size = new System.Drawing.Size(100, 28);
             this.btnForward.TabIndex = 1;
@@ -90,7 +91,7 @@ namespace WebView2WindowsFormsBrowser
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(232, 31);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 28);
             this.btnRefresh.TabIndex = 2;
@@ -101,7 +102,7 @@ namespace WebView2WindowsFormsBrowser
             // btnStop
             // 
             this.btnStop.Location = new System.Drawing.Point(340, 31);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(4);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(100, 28);
             this.btnStop.TabIndex = 3;
@@ -111,7 +112,7 @@ namespace WebView2WindowsFormsBrowser
             // btnGo
             // 
             this.btnGo.Location = new System.Drawing.Point(951, 31);
-            this.btnGo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(4);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(100, 28);
             this.btnGo.TabIndex = 5;
@@ -122,7 +123,7 @@ namespace WebView2WindowsFormsBrowser
             // txtUrl
             // 
             this.txtUrl.Location = new System.Drawing.Point(448, 31);
-            this.txtUrl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUrl.Margin = new System.Windows.Forms.Padding(4);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(493, 22);
             this.txtUrl.TabIndex = 4;
@@ -150,7 +151,8 @@ namespace WebView2WindowsFormsBrowser
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zoomToolStripMenuItem});
+            this.zoomToolStripMenuItem,
+            this.sourceToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
@@ -163,7 +165,7 @@ namespace WebView2WindowsFormsBrowser
             this.xToolStripMenuItem2,
             this.xToolStripMenuItem3});
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.zoomToolStripMenuItem.Text = "Zoom";
             // 
             // xToolStripMenuItem
@@ -194,6 +196,13 @@ namespace WebView2WindowsFormsBrowser
             this.xToolStripMenuItem3.Text = "Get ZoomFactor";
             this.xToolStripMenuItem3.Click += new System.EventHandler(this.xToolStripMenuItem3_Click);
             // 
+            // sourceToolStripMenuItem
+            // 
+            this.sourceToolStripMenuItem.Name = "sourceToolStripMenuItem";
+            this.sourceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sourceToolStripMenuItem.Text = "Source...";
+            this.sourceToolStripMenuItem.Click += new System.EventHandler(this.sourceToolStripMenuItem_Click);
+            // 
             // BrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,7 +217,7 @@ namespace WebView2WindowsFormsBrowser
             this.Controls.Add(this.btnEvents);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BrowserForm";
             this.Text = "BrowserForm";
             this.Resize += new System.EventHandler(this.Form_Resize);
@@ -235,6 +244,7 @@ namespace WebView2WindowsFormsBrowser
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem sourceToolStripMenuItem;
     }
 }
 
